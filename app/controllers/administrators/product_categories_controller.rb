@@ -6,7 +6,7 @@ class Administrators::ProductCategoriesController < AdministratorsController
 
   def index
     @product_categories = ProductCategory.all
-    @parent_product_categories = ProductCategory.where(product_category_id: 0)
+    @parent_product_categories = @product_categories.where(product_category_id: 0)
   end
 
   def new

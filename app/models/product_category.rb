@@ -12,7 +12,5 @@ class ProductCategory < ActiveRecord::Base
 
   validates :name, presence: true
   validates :description, presence: true
-  validates :avatar, presence: true
-
 
 end

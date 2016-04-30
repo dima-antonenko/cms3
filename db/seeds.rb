@@ -1,10 +1,19 @@
-ProductCategory.destroy_all
-Product.destroy_all
+#ProductCategory.destroy_all
+#Product.destroy_all
+
+10.times do |i|
+  ProductCategory.create(name: "Категория #{i}", description: "this is description")
+end	
+
+ProductCategory.all.each do |product_category|
+ 5.times do |i|
+ 	ProductCategory.create(product_category_id: product_category.id, name: "Категория #{product_category.id}-#{i}",
+ 	 description: "this is description")
+ end	
+end
 
 
-#ProductCategory.create(id: 1, name: "Категория 1")
-#ProductCategory.create(id: 2, name: "Категория 2")
-#ProductCategory.create(id: 3, name: "Категория 1-1", product_category_id: 1)
+
 
 #Product.create(id: 1, product_category_id: 1, name: "Тестовый товар", description: "описание", sku: "228")
 
@@ -29,13 +38,3 @@ MenuItem.create(title: "Тестовая страница", menu_id: Menu.first.
 
 
 =end
-
-
-Slider.destroy_all
-Slide.destroy_all
-
-Slider.create(name: "Слайдер на главной странице")
-
-Slide.create(name: "Слайд 1",  slider_id: Slider.first.id, description: "this is a description")
-Slide.create(name: "Слайд 2",  slider_id: Slider.first.id, description: "this is a description")
-Slide.create(name: "Слайд 3",  slider_id: Slider.first.id, description: "this is a description")
